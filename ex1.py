@@ -96,6 +96,7 @@ def replay():
     if replay == "y" or replay == "yes":
         return True
     else:
+        print("Thanks for Playing")
         return False
 
 
