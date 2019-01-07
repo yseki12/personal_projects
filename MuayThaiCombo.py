@@ -1,3 +1,6 @@
+# This program will generate a random combination of Muay Thai Techiques based on the number of techniques a user wants. 
+# Also has option to limit techniques to certain types
+
 import random
 
 ## Muay thai techiniques ##
