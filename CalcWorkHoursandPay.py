@@ -1,3 +1,5 @@
+## This program will calculate hours worked based on a start time and endtime.  Also with the option to calculate pay ##
+
 import datetime
 
 #Ask user for starting time
