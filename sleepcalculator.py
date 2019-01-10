@@ -38,17 +38,11 @@ while True:
 
 	bedtime = bed_time()
 
-	one_cycle = time_cycle(bedtime, 1)
-	two_cycles = time_cycle(bedtime, 2)
-	three_cycles = time_cycle(bedtime, 3)
-	four_cycles = time_cycle(bedtime, 4)
-	five_cycles = time_cycle(bedtime, 5)
-	six_cycles = time_cycle(bedtime, 6)
-	seven_cycles = time_cycle(bedtime, 7)
-	eight_cycles = time_cycle(bedtime, 8)
+	print("You should wake up at one of these times (at least 4-5 cycles recommended):")
 
-	print('You should wake up at one of these times (at least 4-5 cycles recommended):\n', one_cycle, two_cycles, three_cycles,four_cycles,'\n', five_cycles, six_cycles, seven_cycles, eight_cycles)
-
+	for i in range(1,9):
+		print(time_cycle(bedtime, i))
+	
 	if not rerun():
 		print("Have a Nice Day")
 		break
