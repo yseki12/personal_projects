@@ -1,3 +1,6 @@
+# This program will generate a random combination of Muay Thai Techiques based on the number of techniques a user wants. 
+# Also has option to limit techniques to certain types
+
 import random
 
 ## Muay thai techiniques ##
@@ -31,9 +34,7 @@ def menu_choice():
 	while True:
 
 		try:
-			choice = int(input("Please choose one of the following options:\n 1. All Offensive Combination \n \
-2. All Offensive Combination with Defense\n 3. Upper Body Strikes (Punches, Elbows) \n 4. Lower Body Strikes (Kicks, Knees, Teeps)\
-\n 5. Punches + Kicks \n 6. Knees + Elbows: "))
+			choice = int(input("Please choose one of the following options:\n 1. All Offensive Combination \n 2. All Offensive Combination with Defense\n 3. Upper Body Strikes (Punches, Elbows) \n 4. Lower Body Strikes (Kicks, Knees, Teeps)\n 5. Punches + Kicks \n 6. Knees + Elbows: "))
 			if choice not in range (1,7):
 				raise ValueError
 		except TypeError:
