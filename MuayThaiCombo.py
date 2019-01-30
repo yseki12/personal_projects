@@ -1,6 +1,3 @@
-# This program will generate a random combination of Muay Thai Techiques based on the number of techniques a user wants. 
-# Also has option to limit techniques to certain types
-
 import random
 
 ## Muay thai techiniques ##
@@ -11,7 +8,7 @@ kicks = ('Right Body Kick', 'Right Head Kick', 'Right Low Kick', 'Left Body Kick
 teeps = ('Front Teep', 'Rear Teep', 'Jump Teep', 'Side Teep')
 elbows = ('Horizontal Elbow', 'Uppercut Elbow', 'Slashing Elbow', 'Spinning Back Elbow', 'Diagonal Elbow')
 knees = ('Right Knee', 'Left Knee', 'Jump Knee')
-defense = ('Block', 'Evade', 'Parry')
+defense = ('Block', 'Evade', 'Parry', 'Avoid', 'Check', 'Catch', 'Redirect', 'Disrupt')
 
 
 ## User input asking length of combination ##
@@ -34,7 +31,9 @@ def menu_choice():
 	while True:
 
 		try:
-			choice = int(input("Please choose one of the following options:\n 1. All Offensive Combination \n 2. All Offensive Combination with Defense\n 3. Upper Body Strikes (Punches, Elbows) \n 4. Lower Body Strikes (Kicks, Knees, Teeps)\n 5. Punches + Kicks \n 6. Knees + Elbows: "))
+			choice = int(input("Please choose one of the following options:\n 1. All Offensive Combination \n \
+2. All Offensive Combination with Defense\n 3. Upper Body Strikes (Punches, Elbows) \n 4. Lower Body Strikes (Kicks, Knees, Teeps)\
+\n 5. Punches + Kicks \n 6. Knees + Elbows: "))
 			if choice not in range (1,7):
 				raise ValueError
 		except TypeError:
@@ -61,6 +60,12 @@ while True:
 
 	elif menuchoice == 2:
 		combo2 = random.sample(punches + kicks + teeps + elbows + knees + defense, combolength)
+
+		#Make sure at least one defense maneuver is in combination
+		while any(i in combo2 for i in defense) == False:
+			combo2 = random.sample(punches + kicks + teeps + elbows + knees + defense, combolength)
+			if any(i in combo2 for i in defense) == True:
+				break
 		print(' + '.join(combo2))
 
 	elif menuchoice == 3:
