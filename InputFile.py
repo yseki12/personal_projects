@@ -1,3 +1,5 @@
+# GUI for inputting a file with Tkinter
+
 from tkinter import messagebox, filedialog
 from tkinter import *
 
